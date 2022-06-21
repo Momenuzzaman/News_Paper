@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardMedia, IconButton, Typography } from
 
 const News = (props) => {
     console.log(props)
+    const { title,urlToImage,description,author,} = props.article;
     return (
         <Card sx={{ maxWidth: 345 }}>
         <CardHeader
@@ -9,20 +10,18 @@ const News = (props) => {
                 <IconButton aria-label="settings">
                 </IconButton>
             }
-            title="Shrimp and Chorizo Paella"
-            subheader="September 14, 2016"
+            title={title}
+            subheader={author}
             />
             <CardMedia
             component="img"
             height="194"
-            image="/static/images/cards/paella.jpg"
+            image={urlToImage}
             alt="Paella dish"
             />
             <CardContent>
             <Typography variant="body2" color="text.secondary">
-                This impressive paella is a perfect party dish and a fun meal to cook
-                together with your guests. Add 1 cup of frozen peas along with the mussels,
-                if you like.
+                {description}
             </Typography>
             </CardContent>
         </Card>
